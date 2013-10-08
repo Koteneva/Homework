@@ -51,15 +51,17 @@ console.log(5 / 5);
 function reply(cookieThief){
 	var cookieThief;
 	
+	//JG: Make sure to indent code within the curly brackets
+
 	if (cookieThief ==='Dad') {
-	return 'He\'s going to be in trouble!';
+		return 'He\'s going to be in trouble!';
 	}
  	if (cookieThief === 'Mom') {
-	return 'No big deal.';
+		return 'No big deal.';
 	} 
 	
 	if (cookieThief === 'Me') {
-	return 'No more cookies for you.';
+		return 'No more cookies for you.';
 	} 
 	
 	return 'Johnny did it.';	
@@ -87,11 +89,12 @@ var day = 'Thursday';
 var	time = '6:30 PM';
 var	room = 'HU 317';
 	
-	if((day === 'Thursday') && (time === '6:30 PM') && (room === 'HU 317')){
+//JG: Parentheses seem to be a bit of overkill. It's okay to leave them off.
+if (day === 'Thursday' && time === '6:30 PM' && room === 'HU 317') {
 	console.log('You are in CA276');
-	} else {
-		console.log('You are in another class.');	
-	}
+} else {
+	console.log('You are in another class.');	
+}
 
 
 
@@ -116,26 +119,31 @@ var	room = 'HU 317';
 	//
 	// console.log(bartSimpson);
 
+//JG: Perhaps there was a misunderstanding. The point of the exercises was to concatenate the string ten times, not output the same string ten 10 times. The code below has been updated to reflect this.
 
 var bartSimpson = '';
 var i = 0;
 
 while (i < 10 ) {
- 	bartSimpson = 'I will not make fun of the teacher using JavaScript code.';
-	i = i +=1;	
-	console.log(bartSimpson);	
+ 	bartSimpson += 'I will not make fun of the teacher using JavaScript code.';
+	i +=1;	
 }
 
+//JG: Output the concatenated string
+console.log(bartSimpson);	
 
 
 
 // Problem 5
 	// Do the same as you did in question 4 but write it as a for loop.
 
-var bartSimpson = '';
+//JG: No need for var a second time since the variables are already declared
+bartSimpson = '';
 
-for (var i = 0; i < 10; i +=1){
-	bartSimpson = 'I will not make fun of the teacher using JavaScript code.';
-	console.log(bartSimpson);
+for (i = 0; i < 10; i +=1) {
+	bartSimpson += 'I will not make fun of the teacher using JavaScript code.';
 }
+
+//JG: Output the concatenated string
+console.log(bartSimpson);
 	
