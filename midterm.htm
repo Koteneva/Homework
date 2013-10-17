@@ -77,6 +77,7 @@
 	<!-- Your answers go here -->
 	<script>
 		// Problem 1
+		//JG: Good use of data types
 		var courseName = 'CA276';
 		var marchDays = 31;
 		var knowJavaScript = true;
@@ -84,33 +85,39 @@
 		var developerSalary = 89000;
 		
 		// Problem 2
-		console.log(20 * .25 + 20);
-		console.log(400 - (400 * .15));
+		//JG: The numbers seem a bit redundant
+		// What about saying
+		// 20 * 1.25
+		console.log((20 * 0.25) + 20);
+		// 400 * 0.85
+		console.log(400 - (400 * 0.15));
 		console.log(4 * 5);
 		console.log(75 / 5);
 		console.log(Math.round((0.1 * 0.2) * 100) / 100);		
+		// The answer below is preferrable, but yours works too
+		console.log((0.1 * 0.2).toFixed(2));
 		
 		// Problem 3
-		function developer(editor){
-				var editor;
-				
-				if (editor ==='Eclipse') {
-					return 'Java developer';
-				}
-				
-				if (editor === 'Aptana Studio') {
-					return 'Web developer';
-				} 
-				
-				if (editor === 'Sublime Text') {
-					return 'I am awesome';
-				} 
-				
-				if (editor === 'Notepad') {
+		function developer(editor) {
+			//JG: No need to declare editor locally
+			
+			if (editor === 'Eclipse') {
+				return 'Java developer';
+			}
+
+			if (editor === 'Aptana Studio') {
+				return 'Web developer';
+			}
+
+			if (editor === 'Sublime Text') {
+				return 'I am awesome';
+			}
+
+			if (editor === 'Notepad') {
 				return 'Wrong editor';
-				}
+			}
 		}
-		
+
 		//Testing the function
 		console.log(developer('Eclipse'));
 		console.log(developer('Aptana Studio'));
@@ -123,31 +130,36 @@
 		for (i = 5; i < 15; i +=1) {
 			console.log(i);
 		}
+
 		console.log(i);
 		
 		// Problem 5
-		function average(num1, num2, num3){
-			var num1,
-				num2,
-				num3;
-				
-			if( typeof(num1) === 'number' && typeof(num2) === 'number' && typeof(num2) === 'number') {
-			
-				return (num1 + num2 + num3) / 3;	
-			}
-			
-			else{
-			return NaN;
+		function average(num1, num2, num3) {
+			//JG: No need to declare local variables since they are declared above as arguments
+			if (typeof(num1) === 'number' && typeof(num2) === 'number' && typeof(num2) === 'number') {
+				return (num1 + num2 + num3) / 3;
+			} else {
+				return NaN;
 			}
 		}
-		
+
+		//JG: Something to think about: 
+		// How would you make an "average" function that accepts any number of "num" arguments? 
+		// Hint: It won't work if you define the argument names.
+
+		// console.log(avg(1, 2));
+		// console.log(avg(1, 2, 3, 4, 5));
+		// console.log(avg(1, 2, 3));
+
 		//Test
 		console.log(average(2, 4, 6));
-		console.log(average( 2, 'Hallo', 6));
+		console.log(average(2, 'Hallo', 6));
 		
 		
 		// Problem 6
 		console.log('The harders part of learning JavaScript is figuring out which bracket, comma, or semicolon is missing!')
+
+		//JG: Yes, this is indeed a universally lousy part of most C-style languages like Java and C++. Have you ever looked into CoffeeScript? It is a language that compiles down to JavaScript and leaves off many of the lousy syntax characteristics like curly brackets. Java developers that don't like dealing with semicolons turn to other languages such as Groovy.
 		</script>
 
 </body>
