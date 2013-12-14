@@ -1,4 +1,3 @@
-
 // Homework 5
 
 // This homework assignment will give you practice working with the DOM.
@@ -15,7 +14,7 @@
 // Using the W3C functions document.createElement(), document.createTextNode(), 
 // and document.body.appendChild(), append the following HTML to the page.
 
-var text1, text2, dl, dt, dd; 
+var text1, text2, dl, dt, dd;
 
 text1 = document.createTextNode('woof (woof) noun');
 text2 = document.createTextNode('The threads that run crosswise (at right angles with the warp) in a woven cloth. Also known as weft. Texture.');
@@ -24,12 +23,12 @@ dt = document.createElement('dt');
 dd = document.createElement('dd');
 
 dl.appendChild(dt);
-dl.appendChild(dd);	
+dl.appendChild(dd);
 dt.appendChild(text1);
 dd.appendChild(text2);
 
 document.body.appendChild(dl);
-	
+
 
 // <dl>
 //         <dt>Some word</dt>
@@ -50,11 +49,9 @@ document.body.appendChild(dl);
 // Do the same thing as problem 1 only insert your HTML using the innerHTML
 // property of the DIV with id="definitions".
 
-		var container;
-        container = document.getElementById('definitions');
-        container.innerHTML += '<dl><dt></dt><dd></dd></dl>';
-        container.innerHTML += '<dt>malapropism</dt>';
-		container.innerHTML += '<dd>noun: The humorous misuse of a word by confusing it with a similar-sounding word.For example, "pineapple of perfection" for "pinnacle of perfection".</dd>';
+var container;
+container = document.getElementById('definitions');
+container.innerHTML += '<dl><dt>malapropism</dt><dd>noun: The humorous misuse of a word by confusing it with a similar-sounding word.For example, "pineapple of perfection" for "pinnacle of perfection".</dd></dl>';
 
 
 // Problem 3
@@ -64,7 +61,4 @@ document.body.appendChild(dl);
 // Just worry about the code that does the text appending.// JavaScript Document
 
 $('#definitions')
-	.append('<dl id="container"></dl>');
-$('#container')
-	.append('<dt>sounder (SOUN-duhr) noun</dt>')
-	.append('<dd>1. A person or thing that makes sound. 2. A group of wild boars.</dd>');
+	.append('<dl><dt>sounder (SOUN-duhr) noun</dt><dd>1. A person or thing that makes sound. 2. A group of wild boars.</dd></dl>');
