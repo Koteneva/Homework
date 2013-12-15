@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css" media="screen">
+		body { margin:2em 4em; background:#ddd; text-align:center }
+		canvas { display:block; border:1px solid #aaa; margin:1em auto; background:#eee; }
+	</style>
+<!--Icons By IconEden - http://www.iconeden.com & Cat Power by Iconka.com -->
+</head><body>
+	<canvas height="500" width="500"></canvas> 
+	
+	<script type="text/javascript" charset="utf-8">
+		//Basic usage, Drawing Shapes, Using images, Applying styles and colors, Transformations, Compositing, & Basic animations
+		
+		var cat1Center = [ 13, 75.5 ];
+		var tree = new Image, cat1 = new Image, cat2 = new Image, cat3 = new Image;
+		window.onload = function(){
+			var canvas = document.getElementsByTagName('canvas')[0];
+			var ctx = canvas.getContext('2d');
+			setInterval(function(){
+				ctx.save();
+				ctx.clearRect( 0, 0, canvas.width, canvas.height );				
+
+				//Center canvas coordinates
+				ctx.translate( canvas.width/2 , canvas.height/2 );
+				
+				//Draw cat2
+				ctx.drawImage( cat2, 120, 20, cat2.width, cat2.height );
+				
+				// Draw tree
+				ctx.drawImage( tree, -210, -250, tree.width, tree.height );
+				
+				// Draw cat3
+				ctx.drawImage( cat3, -190, 40, cat3.width, cat3.height );
+
+				//Rectangle and Text
+				ctx.fillStyle= "green";
+				ctx.fillRect(-159,180,140,27);
+				
+				function drawText() {
+            		ctx.fillStyle = "white";
+            		ctx.font = "14pt Helvetica";
+            		ctx.textAlign = "left";
+            		ctx.textBaseline = "middle";
+            		ctx.fillText("Happy Holidays!", -157 , 192);
+        		}
+								
+				drawText();
+				
+				// Translate and rotate cat1
+				ctx.translate(65 , -150 );
+				ctx.rotate( 1.3*Math.sin( (new Date)*1/1000 ) - 5.15 );
+				ctx.drawImage( cat1, -cat1Center[0], -cat1Center[1], cat1.width, cat1.height );			
+							
+				ctx.restore();
+			},50);
+		};
+		tree.src = 'https://cdn1.iconfinder.com/data/icons/ie_Smashing_Christmas/256/christmas_2.png';
+		tree.width =450;
+	  	tree.height = 450;
+		
+		cat1.src = 'https://cdn1.iconfinder.com/data/icons/cat-power/256/cat_fight.png';
+		cat1.width = 170;
+	  	cat1.height = 170;
+		
+		cat2.src = 'https://cdn1.iconfinder.com/data/icons/cat-power/128/cat_tied.png';
+	 	cat2.width = 125;
+	  	cat2.height = 125;
+		
+		cat3.src = 'https://cdn1.iconfinder.com/data/icons/cat-power/256/cat_box.png';
+	 	cat3.width = 200;
+	  	cat3.height = 200;
+					
+	</script>
+</body></html>
